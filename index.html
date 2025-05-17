@@ -2,105 +2,261 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Seven Ray Paints</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
     />
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Bootstrap JS Bundle -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"
+      defer
     ></script>
+
+    <!-- Custom JS for slider -->
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".slide");
+        let currentIndex = 0;
+
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.style.display = i === index ? "block" : "none";
+          });
+        }
+
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % slides.length;
+          showSlide(currentIndex);
+        }
+
+        showSlide(currentIndex);
+        setInterval(nextSlide, 4000); // change slide every 4 seconds
+      });
+    </script>
   </head>
   <body>
     <!-- Navigation Bar -->
-    <div class="container">
-      <div class="navbar-t">
+    <div class="container my-3">
+      <div class="navbar-t d-flex align-items-center justify-content-between">
         <div class="logo">
-          <img src="images/logo.png" alt="logo" width="200px"/>
+          <img src="images/logo.png" alt="Seven Ray Paints Logo" width="200" />
         </div>
-        <p class="links">
-          <a href="index.html"> Home /</a>
-          <a href="about.html"> About /</a>
-          <a href="contact.html"> Contact </a>
+        <p class="links mb-0">
+          <a href="index.html">Home</a> /
+          <a href="#seven-ray-section">About</a> / <a href="#footer">Contact</a>
         </p>
       </div>
     </div>
 
-    <!-- Home Page -->
-    <div class="container">
-        <div class="slider">
-            <div class="slides">
-              <div class="slide">
-                <img src="images/home.jpg" alt="Image 1" />
-              </div>
-              <div class="slide">
-                <img src="images/home2.jpg" alt="Image 2" />
-              </div>
-              <div class="slide">
-                <img src="images/home3.jpg" alt="Image 3" />
-              </div>
+    <!-- Slider Section -->
+    <section class="slider-section container mb-4">
+      <div
+        class="slider position-relative overflow-hidden"
+        style="height: 700px"
+      >
+        <div class="slides">
+          <div class="slide">
+            <img
+              src="images/home.jpg"
+              alt="Paint Shop Interior"
+              class="w-100 h-100 object-fit-cover"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="images/home2.jpg"
+              alt="Paint Cans Display"
+              class="w-100 h-100 object-fit-cover"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="images/home3.jpg"
+              alt="Painting Work Example"
+              class="w-100 h-100 object-fit-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home Section -->
+    <section class="home">
+      <div class="home-content container">
+        <h1>Welcome to Seven Ray Paint Shop</h1>
+        <p>
+          Your trusted source for premium paints and hardware in Gonapinuwala.
+        </p>
+        <p>
+          Owned and operated by <strong>Chaminda Guruge</strong>, we proudly
+          serve local homeowners, builders, and painters with top-quality
+          products, expert advice, and friendly service.
+        </p>
+        <br />
+        <p><strong>Top Brands</strong></p>
+        <div class="brands d-flex gap-3 mb-4">
+          <img src="images/nip.jpg" alt="Nippon Paints Logo" height="50" />
+          <img src="images/wapp.jpg" alt="Wapp Logo" height="50" />
+          <img src="images/asi.png" alt="Asian Paints Logo" height="50" />
+          <img src="images/jat.jpg" alt="JAT Logo" height="50" />
+          <img src="images/dulux-seeklogo.png" alt="Dulux Logo" height="50" />
+        </div>
+      </div>
+
+      <!-- About / Product Section -->
+      <section class="seven-ray-section mb-5" id="seven-ray-section">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h2>We Create the Colors You Need</h2>
+              <h3>Custom Colors Available For:</h3>
+              <ul>
+                <li>
+                  <strong>Nippon Paints</strong> - Long-lasting protection with
+                  Japanese technology.
+                </li>
+                <li>
+                  <strong>Asian Paints (Causeway)</strong> - Over 1800 color
+                  options at affordable prices.
+                </li>
+                <li>
+                  <strong>Dulux</strong> - Internationally trusted colors from
+                  top paint experts.
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6 text-center">
+              <img
+                src="images/How-To-Custom-Color-Hair-Extensions.jpg"
+                alt="Color Palette"
+                class="img-fluid rounded shadow"
+              />
             </div>
           </div>
-          
-          <section class="home" id="home">
-            <div class="home-content">
-              <h1>Welcome to Seven Ray Paint Shop</h1>
-              <p>Your trusted source for premium paints and hardware in Gonapinuwala.</p>
-              <p>Owned and operated by <strong>Chaminda Guruge</strong>, we proudly serve local homeowners, builders, and painters with top-quality products, expert advice, and friendly service.</p>
-              <br>
 
-              <p><b>Top Brands</b></p>
-              <br>
-              <i class="brands">
-                <img src="images/nip.jpg" alt="nip">
-                <img src="images/wapp.jpg" alt="wapp">
-                <img src="images/asi.png" alt="asi">
-                <img src="images/jat.jpg" alt="jat">
-                <img src="images/dulux-seeklogo.png" alt="dulux">
-              </i>
+          <br /><br />
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+              <img
+                src="images/tool.jpeg"
+                alt="Tools"
+                class="img-fluid rounded shadow"
+              />
             </div>
-            
-          </section>
-          <footer class="fot">
-            <div class="container footer-flex">
-              <section class="contact-section">
-                <h2>Contact Information</h2>
-                <ul class="contact-list">
-                  <li><strong>Owner:</strong> Chaminda Guruge</li>
-                  <li><strong>Business:</strong> Seven Ray Paint Shop & Hardware</li>
-                  <li><strong>Location:</strong> Gonapinuwala, Sri Lanka</li>
-                  <li><strong>Phone:</strong> <a href="tel:+94779594737">077 959 4737</a></li>
-                  <li><strong>Hours:</strong> Open Daily · <em>8:00 AM – 6:00 PM</em></li>
-                  <li><strong>Google Maps:</strong> <a href="#" target="_blank">Get Directions</a></li>
-                </ul>
-                
-              </section>
-          
-              <section class="services-section">
-                <h2>Our Products & Services</h2>
-                <ul>
-                  <li>Interior & Exterior Paints</li>
-                  <li>Wood Coatings & Varnishes</li>
-                  <li>Paint Brushes, Rollers & Tools</li>
-                  <li>Color Mixing & Custom Shades</li>
-                  <li>Wall Putty, Primers & Sealers</li>
-                  <li>General Hardware Supplies</li>
-                </ul>
-                <p><strong>Top Brands:</strong> Nippon, JAT, Dulux, Multilac, Asian Paints</p>
-              </section>
+            <div class="col-md-6">
+              <h3>We Also Offer:</h3>
+              <ul>
+                <li>All types of silicone sealants</li>
+                <li>Company-made auto paints</li>
+                <li>Wall putty</li>
+                <li>Paint brushes, rollers, and tools</li>
+                <li>Painting-related hardware items</li>
+              </ul>
             </div>
-            <p class="coppy">© 2025 Priyashan Gimantha · Seven Ray Paints. All rights reserved.</p>
-          </footer>
-          
-          
-          
-          
+          </div>
 
+          <br /><br />
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h3>Need a Painter?</h3>
+              <p>
+                We can connect you with experienced and trusted painters at
+                <strong>seasonal, affordable rates</strong>. Enjoy high-quality
+                service with every project.
+              </p>
+            </div>
+            <div class="col-md-6 text-center">
+              <img
+                src="images/painter.jpeg"
+                alt="Painter"
+                class="img-fluid rounded shadow"
+              />
+            </div>
+          </div>
+
+          <br />
+          <h3>Expert Advice with Friendly Service</h3>
+          <p>
+            Our team is always happy to help you choose the right paint, color,
+            or tool. We offer
+            <strong>computerized color matching</strong> and professional
+            recommendations for your wall and space.
+          </p>
+          <br />
+          <h3>Visit Us Today!</h3>
+          <ul>
+            <li>
+              <strong>Location:</strong> Seven Ray Paints, Hataramankada
+              Junction, Gonapinuwala, Sri Lanka
+            </li>
+            <li>
+              <strong>Phone / WhatsApp:</strong>
+              <a href="tel:+94779594737">077 959 4737</a>
+            </li>
+            <li>
+              <strong>TikTok:</strong>
+              <a
+                href="https://www.tiktok.com/@sevenray_paint_shop"
+                target="_blank"
+                rel="noopener noreferrer"
+                >@sevenray_paint_shop</a
+              >
+            </li>
+          </ul>
+          <p class="highlight">
+            From vibrant walls to protective finishes, we’ve got everything you
+            need under one roof!
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="fot bg-light py-4" id="footer">
+      <div
+        class="container footer-flex d-flex justify-content-between flex-wrap gap-4"
+      >
+        <section class="contact-section">
+          <h2>Contact Information</h2>
+          <ul class="contact-list list-unstyled">
+            <li><strong>Owner:</strong> Chaminda Guruge</li>
+            <li><strong>Business:</strong> Seven Ray Paint Shop & Hardware</li>
+            <li><strong>Location:</strong> Gonapinuwala, Sri Lanka</li>
+            <li>
+              <strong>Phone:</strong>
+              <a href="tel:+94779594737">077 959 4737</a>
+            </li>
+            <li><strong>Hours:</strong> Open 7 Days</li>
+          </ul>
+        </section>
+        <section class="map-section">
+          <h2>Find Us</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.9209725877804!2d80.13422257604904!3d6.141317893845649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae17786af629019%3A0xd80d9bb3bf5f2dc8!2sSeven%20Ray%20Paint%20Shop%20%26%20Hardware!5e0!3m2!1sen!2slk!4v1747463992076!5m2!1sen!2slk"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </section>
+      </div>
+      <div class="text-center mt-3">
+        <small>&copy; 2025 Seven Ray Paints. All rights reserved.</small>
+      </div>
+    </footer>
   </body>
 </html>
